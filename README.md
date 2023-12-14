@@ -43,6 +43,26 @@ Pour se trouver entre eux, les utilisateurs peuvent effectuer une recherche par 
 ![messenger_search](https://github.com/DevBlocks42/Nomade/assets/136115859/30cbf302-2055-469d-a910-46fe22cf8ef2)
 ![messenger_search_2](https://github.com/DevBlocks42/Nomade/assets/136115859/90b21764-ce20-41e1-8f8a-49298b57207f)
 
+## Discussions actives 
+
+Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'index de sa messagerie.
+
+![messenger_discussions](https://github.com/DevBlocks42/Nomade/assets/136115859/2e9d5202-eee6-4821-abc9-b77484f3a4a9)
+
+## Discussions entre utilisateurs (Alice et Bobby)
+
+![discussion_1](https://github.com/DevBlocks42/Nomade/assets/136115859/9a6abdff-6177-44cf-8c5f-9bb97fdcd5d3)
+
+![discussion_2](https://github.com/DevBlocks42/Nomade/assets/136115859/e0aca93e-58f5-4a99-8ad1-315b5ed674b9)
+
+![discussion_3](https://github.com/DevBlocks42/Nomade/assets/136115859/10e6d0d3-a098-464b-ba94-37d9fb950b3e)
+
+![discussion_4](https://github.com/DevBlocks42/Nomade/assets/136115859/e79e35be-b149-42e6-9765-60baa6edf105)
+
+![discussion_5](https://github.com/DevBlocks42/Nomade/assets/136115859/122111ce-40b9-4389-9251-5f423d0ff486)
+
+
+
 
 
 
