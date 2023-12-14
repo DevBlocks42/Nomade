@@ -26,6 +26,19 @@ L'inscription s'effectue via un formulaire de saisie et nécéssite l'activation
 
 ![login](https://github.com/DevBlocks42/Nomade/assets/136115859/f0966a7e-ab1a-43a8-b04b-2aba352078e1)
 
+## Profil utilisateur
+
+Chaque compte dispose d'un profil avec des données que l'utilisateur peut parfois modifier.
+
+![profile_1](https://github.com/DevBlocks42/Nomade/assets/136115859/5641ed29-8748-45f2-9669-8d14942b2f80)
+
+![profile_2](https://github.com/DevBlocks42/Nomade/assets/136115859/6b06f943-7d94-42bd-951f-f95224c93470)
+
+![profile_3](https://github.com/DevBlocks42/Nomade/assets/136115859/89bd4c38-ba39-4f73-8dae-d95696c88d71)
+
+
+
+
 
 
 
