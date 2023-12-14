@@ -1,5 +1,7 @@
 [Logiciels](https://github.com/DevBlocks42/Nomade/blob/main/README.md#logiciels)
-[Présentation](linkurl)
+
+[Présentation](https://github.com/DevBlocks42/Nomade/blob/main/README.md#pr%C3%A9sentation)
+
 [Documentation](linkurl)
 
 # Nomade Secured Chat
