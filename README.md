@@ -78,7 +78,7 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 # Documentation technique des modules
 
-## user
+## user.js
 
 
 `createUserAccount(configEmail, username, email, password, callback)`
@@ -105,8 +105,39 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 `changeUserEmail(configEmail, username, email)`
 
+`changeUserPassword(bcrypt, username, newPassword)`
 
+`changeUserDescription(username, description)`
 
+`setUserAvatar(username, filePath)`
+
+`deleteUserAccount(username)`
+
+`findUser(username)`
+
+`getUserPasswordHash(userid)`
+
+`getUserName(userid)`
+
+## discussion.js
+
+`createDiscussion(user, fromID, toID, state)`
+
+`discussionExists(fromID, toID)`
+
+`getDiscussionID(fromID, toID)`
+
+`getDiscussionCertificates(discussionID, issuerID, receiverID, callback)`
+
+`addMessage(discussionID, encryptedMessage, callback)`
+
+`getDiscussionMessages(discID)`
+
+`getUserPublicKey(discID, userID)`
+
+`getUserDiscussions(userid)`
+
+`getDiscussionUserIDS(id)`
 
 
 
