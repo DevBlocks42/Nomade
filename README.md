@@ -68,6 +68,11 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 ![discussion_5](https://github.com/DevBlocks42/Nomade/assets/136115859/122111ce-40b9-4389-9251-5f423d0ff486)
 
+# Diagramme relationnel de la base de données
+
+![db_relationnal_diagram](https://github.com/DevBlocks42/Nomade/assets/136115859/5dbb2879-24a3-47cf-b425-7b4249d45d69)
+
+
 
 
 
