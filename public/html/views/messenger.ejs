@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <link type = "text/css" rel = "stylesheet" href = "/css/bulma.css">
+    </head>
+    <body>
+        <%- include("../partials/header"); %>
+        <section class = "hero is-fullheight has-background-grey-lighter">
+            <section class = "section mt-6">
+                <div class = "box has-text-centered">
+                    
+                        <%
+                            var userNames = [];
+                            var userIDS = [];
+                            if(discussions)
+                            {
+                                var len = discussions.length;
+                                if(len > 0)
+                                {
+                                    for(var i = 0; i < len; i++)
+                                    {
+                                        var l = discussions[i].length;
+                                        for(var j = 0; j < l; j++)
+                                        {
+                                            if(typeof discussions[i][j] === "string" && userDatas["username"] !== discussions[i][j])
+                                            {
+                                                userNames.push(discussions[i][j]);
+                                            }
+                                            else if(typeof discussions[i][j] === "number")
+                                            {
+                                                userIDS.push(discussions[i][j]);
+                                            } 
+                                        }
+                                    }
+                                    %> 
+                                    <table class = "table">
+                                        <thead>
+                                            <tr>
+                                                <th>Utilisateur</th>  
+                                                <th>Discuter</th>     
+                                            </tr>    
+                                        </thead>
+                                        <%
+                                            var ids = 0;
+                                            for(var k = 0; k < userNames.length; k++)
+                                            {
+                                                %> 
+                                                    <tr>
+                                                        <td><%- userNames[k]; %></td>
+                                                        <td><a href = '/messenger/<%- userIDS[ids] %>/<%- userIDS[ids + 1] %>'>📩</a></td>    
+                                                    </tr>
+                                                <%
+                                                ids += 2;
+                                            }
+                                        %>
+                                    </table>
+                                    <%
+                                }
+                            }                        
+                        %>
+                </div>
+                <form method = "POST" action = "/messenger">
+                    <div class = "field has-addons">
+                        <input class = "input has-background-lightgrey has-text-black" type = "text" name = "username" placeholder = "Trouver des utilisateurs">
+                        <div class = "control">
+                            <input class = "input has-background-dark has-text-white" type = "submit" value = "Rechercher">
+                        </div>
+                    </div>
+                </form>
+                <% if(searchResult.length > 0) { %> 
+                    <div class = "columns is-centered mt-4 has-text-centered">
+                        <table class = "table">
+                            <tbody>
+                                <% for(var i = 0; i < searchResult.length; i++) { %>
+                                    <tr class = "column">
+                                        <td>
+                                            <b><%- searchResult[i][0] %></b>
+                                            <figure class = 'image is-128x128'><img class = "is-rounded" src = 'uploads/<%- searchResult[i][1] %>'></figure>
+                                            <a class = 'mt-4' href = '/messenger/new/<%- fromid %>/<%- searchResult[i][2] %>'>Discuter</a>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } %>
+            </section>
+        </section>
+        <%- include("../partials/footer"); %>
+    </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <link type = "text/css" rel = "stylesheet" href = "/css/bulma.css">
+        <script src = "../../javascript/openpgp.min.js"></script>
+        <script src = "../../javascript/jquery.min.js"></script>
+        <script src = "../../javascript/textFormatting.js"></script>
+    </head>
+    <body>
+        <%- include("../partials/header"); %>
+        <div id = "certificates">
+            <input type = "hidden" id = "receiverPublicKey" value = "<%- pgpCertificates[0] %>">
+            <input type = "hidden" id = "issuerPrivateKey" value = "<%- pgpCertificates[1] %>">
+            <input type = "hidden" id = "issuerPublicKey" value = "<%- issuerPublic %>">
+            <input type = "hidden" id = "issuerHash" value = "<%- issuerHash %>">
+            <input type = "hidden" id = "discussionID" value = "<%- discID %>">
+            <input type = "hidden" id = "issuerID" value = "<%- fromUserID %>">
+            <input type = "hidden" id = "receiverID" value = "<%- toUserID %>">
+            <input type = "hidden" id = "order" value = "<%- order %>">
+            <input type = "hidden" id = "currentUsername" value = "<%- currentUsername %>">
+        </div>
+        <section class = "hero is-fullheight has-background-grey-lighter">
+            <div class = "box has-text-centered">💬 Discussion avec <%= name %>
+                <div class = "box has-text-left" id = "message_holder">
+                   <!-- MESSAGES --> 
+                </div> 
+            </div>
+            <div class = "box">
+                <div class = "box">
+                    <span class="icon-text">
+                        <span class="icon is-large">
+                            <button onclick="formatText(0)"><img src = "../../images/bold.svg"></button>
+                        </span>
+                        <span class="icon is-large">
+                            <button onclick="formatText(1)"><img src = "../../images/italic.svg"></button>
+                        </span>
+                        <span class="icon is-large">
+                            <button onclick="formatText(2)"><img src = "../../images/underline.svg"></button>
+                        </span>
+                        <span class="icon is-large">
+                            <button onclick="formatText(3)"><img src = "../../images/strike.svg"></button>
+                        </span>
+                    </span>
+                </div>
+                <form class = "field has-addons">
+                    <input name = "message" id = "message" class = "input" type = "text">
+                    <script>
+                        var issuerPrivateKeyArmored = document.getElementById("issuerPrivateKey").value;
+                        var issuerPublicKey = document.getElementById("issuerPublicKey").value;
+                        var issuerHash = document.getElementById("issuerHash").value;
+                        var userMessage = document.getElementById("message");
+                        var discussionID = document.getElementById("discussionID").value;
+                        var issuerID = document.getElementById("issuerID").value;
+                        var receiverID = document.getElementById("receiverID").value;
+                        var order = document.getElementById("order").value;
+                        var currentUsername = document.getElementById("currentUsername").value;
+                        var messageHolder = document.getElementById("message_holder");
+                        function getNewMessages()
+                        {
+                            var result = null;
+                            $.post 
+                            ({
+                                url : "/messenger/get/",
+                                data : {discID : discussionID, fromUserID : issuerID, toUserID : receiverID},
+                                dataType : "json",
+                                async : false,
+                                success : function(data) 
+                                {
+                                    result = data;
+                                }
+                            });
+                            return result;
+                        }
+                        async function sendMessage()  
+                        {
+                            var receiverPublicKey = await openpgp.readKey({armoredKey : document.getElementById("receiverPublicKey").value});
+                            var issuerPublicKey = await openpgp.readKey({armoredKey : document.getElementById("issuerPublicKey").value});
+                            const encrypted = await openpgp.encrypt
+                            ({
+                                message : await openpgp.createMessage({ text : currentUsername + " </b>: " + userMessage.value}), 
+                                encryptionKeys : [receiverPublicKey, issuerPublicKey]
+                            });
+                            $.post
+                            ({
+                                url : "/messenger/send/",
+                                data : {encryptedMessage : encrypted, discID : discussionID, fromUserID : issuerID, toUserID : receiverID},
+                                dataType : "json"
+                            });
+                            document.getElementById("message").value = "";
+                        }
+                        async function decryptMessages(newMessages)
+                        {
+                            var clearTextMessages = [];
+                            for(var i = 0; i < newMessages.length; i++)
+                            {
+                                var date = new Date(newMessages[i]['sending_date']);
+                                var encryptedMessage = newMessages[i]['message_body'].replaceAll("\\n", "\n");
+                                const issuerPrivateKey = await openpgp.decryptKey
+                                ({
+                                    privateKey : await openpgp.readKey({ armoredKey : issuerPrivateKeyArmored }),
+                                    passphrase : issuerHash
+                                });
+                                const message = await openpgp.readMessage({ armoredMessage : encryptedMessage });
+                                const { data : decrypted } = await openpgp.decrypt
+                                ({
+                                    message,
+                                    decryptionKeys : issuerPrivateKey 
+                                });
+                                clearTextMessages.push([date, decrypted]);
+                            }
+                            return clearTextMessages;
+                        }
+                        async function initDiscussion(newMessages)
+                        {
+                            var messages = await decryptMessages(newMessages);
+                            for(var i = 0; i < messages.length; i++)
+                            {
+                                var date = messages[i][0].toLocaleString("fr-FR", {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: "2-digit"});
+                                var msg = messages[i][1];
+                                var html = "<div class = 'box has-text-left'>" + date + " : " + msg + "</div>";
+                                messageHolder.insertAdjacentHTML('beforeend', html);
+                            }
+                        }
+                        var messages = getNewMessages();
+                        var currentMessageCount = messages.length;
+                        initDiscussion(messages);
+                        messages = [];
+                        setInterval
+                        (
+                            async () => 
+                            {
+                                messages = getNewMessages();
+                                if(messages.length > currentMessageCount)
+                                {
+                                    var newMessages = [messages[messages.length - 1]];
+                                    initDiscussion(newMessages);
+                                    currentMessageCount++;
+                                    messages = []
+                                }
+                            }, 
+                            5000
+                        );
+                    </script>
+                    <a class = "button is-info" id = "sendMessageButton" onclick = "sendMessage()">Envoyer</a>
+                </form>
+            </div>
+        </section>
+        <%- include("../partials/footer"); %>    
+    </body>
+</html>

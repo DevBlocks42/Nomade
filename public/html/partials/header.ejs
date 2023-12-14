@@ -1,0 +1,14 @@
+<div class = "navbar has-background-dark">
+    <div class = "navbar-brand navbar-menu is-active has-background-grey-dark">
+        <div class = "buttons">
+        <% for(var i = 0; i < navBarContent.length; i++) {%>
+            <% if(navBarContent[i][2] === 1 && userDatas) { %>
+                <a class = "navbar-item button is-dark ml-2" href = '<%- navBarContent[i][1] %>'><%- navBarContent[i][0]%></a>
+            <% } %>
+            <% if(navBarContent[i][2] === 0 && !userDatas) { %>
+                <a class = "navbar-item button is-dark ml-2" href = '<%- navBarContent[i][1] %>'><%- navBarContent[i][0]%></a>
+            <% } %>
+        <% } %>
+        </div>
+    </div>
+</div>
