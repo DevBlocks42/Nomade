@@ -1,10 +1,10 @@
-[Logiciels](https://github.com/DevBlocks42/Nomade/blob/main/README.md#logiciels)
+- [Logiciels](https://github.com/DevBlocks42/Nomade/blob/main/README.md#logiciels)
 
-[Présentation](https://github.com/DevBlocks42/Nomade/blob/main/README.md#pr%C3%A9sentation)
+- [Présentation](https://github.com/DevBlocks42/Nomade/blob/main/README.md#pr%C3%A9sentation)
 
-[Base de données](https://github.com/DevBlocks42/Nomade/blob/main/README.md#diagramme-relationnel-de-la-base-de-donn%C3%A9es)
+- [Base de données](https://github.com/DevBlocks42/Nomade/blob/main/README.md#diagramme-relationnel-de-la-base-de-donn%C3%A9es)
 
-[Documentation](https://github.com/DevBlocks42/Nomade/blob/main/README.md#documentation-technique-des-modules)
+- [Documentation](https://github.com/DevBlocks42/Nomade/blob/main/README.md#documentation-technique-des-modules)
 
 # Nomade Secured Chat
 
