@@ -1,3 +1,7 @@
+[Logiciels](linkurl)
+[Présentation](linkurl)
+[Documentation](linkurl)
+
 # Nomade Secured Chat
 
 Nomade est une application web de messagerie instantanée et sécurisée grâce au chiffrement PGP.
