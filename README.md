@@ -14,3 +14,10 @@ Autrement dit, les messages ont au moins une couche de chiffrement lorsqu'ils tr
 
 ![register_1](https://github.com/DevBlocks42/Nomade/assets/136115859/983f3b6c-6982-45ba-94e6-fa32ef9f06c2)
 
+![profile_2](https://github.com/DevBlocks42/Nomade/assets/136115859/eaf2bb53-6bda-413c-96f9-231b2f0e29cf)
+
+![register_3](https://github.com/DevBlocks42/Nomade/assets/136115859/19f9437a-33e8-41e3-aabc-599e3c521ff9)
+
+![register_4](https://github.com/DevBlocks42/Nomade/assets/136115859/afb03438-9e01-4cdd-9e56-1217200ef1d7)
+
+
