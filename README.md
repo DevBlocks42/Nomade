@@ -139,6 +139,18 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 `getDiscussionUserIDS(id)`
 
+## database.js
+
+`createConnection()`
+
+## form.js
+
+`print(files = false)`
+
+## mailer.js
+
+`sendMessage(title, message, destination)`
+
 
 
 
