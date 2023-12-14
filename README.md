@@ -36,6 +36,14 @@ Chaque compte dispose d'un profil avec des données que l'utilisateur peut parfo
 
 ![profile_3](https://github.com/DevBlocks42/Nomade/assets/136115859/89bd4c38-ba39-4f73-8dae-d95696c88d71)
 
+## Recherche par pseudonyme
+
+Pour se trouver entre eux, les utilisateurs peuvent effectuer une recherche par pseudonyme et ensuite initier une discussion avec le déstinataire.
+
+![messenger_search](https://github.com/DevBlocks42/Nomade/assets/136115859/30cbf302-2055-469d-a910-46fe22cf8ef2)
+![messenger_search_2](https://github.com/DevBlocks42/Nomade/assets/136115859/90b21764-ce20-41e1-8f8a-49298b57207f)
+
+
 
 
 
