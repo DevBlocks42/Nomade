@@ -6,6 +6,6 @@ Ainsi, les messages bénéficient de deux couches de chiffrement, l'une inhéren
 Autrement dit, les messages ont au moins une couche de chiffrement lorsqu'ils transittent par le réseau et ne sont jamais stockés en clair dans la base de données.
 
 
-ATTENTION : L'utilisation de cette application web nécéssite la mise en place d'un certificat SSL/TLS et le protocole HTTPS dans la mesure ou les clefs privées PGP des utilisateurs sont envoyées par le serveur.
+**ATTENTION :** L'utilisation de cette application web nécéssite la mise en place d'un certificat **SSL/TLS** et le protocole **HTTPS** dans la mesure ou les clefs privées PGP des utilisateurs sont envoyées par le serveur.
 
 # Présentation 
