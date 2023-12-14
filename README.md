@@ -72,6 +72,76 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 ![db_relationnal_diagram](https://github.com/DevBlocks42/Nomade/assets/136115859/5dbb2879-24a3-47cf-b425-7b4249d45d69)
 
+# Exemple de fonctionnement de la discussion
+
+<mxfile host="app.diagrams.net" modified="2023-12-14T16:07:39.911Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" etag="ACIddpK8dCWJ0FkeMvZH" version="22.1.8" type="device">
+  <diagram name="Page-1" id="Hr0r8Cbbp95C8EZxBnPu">
+    <mxGraphModel dx="1434" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iNef2An1ivGxDfvHR7-c-1" value="Alice" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-2" value="Bob" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iNef2An1ivGxDfvHR7-c-3" target="iNef2An1ivGxDfvHR7-c-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-3" value="Serveur" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="259" y="750" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iNef2An1ivGxDfvHR7-c-4" target="iNef2An1ivGxDfvHR7-c-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-4" value="Base de données" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="343" y="940" width="141" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-7" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="iNef2An1ivGxDfvHR7-c-3" target="iNef2An1ivGxDfvHR7-c-1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="160" y="710" as="sourcePoint" />
+            <mxPoint x="460" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-8" value="&lt;div style=&quot;font-size: 16px;&quot;&gt;Message chiffré avec la clef publique de Bob&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iNef2An1ivGxDfvHR7-c-7">
+          <mxGeometry x="0.1758" y="-1" relative="1" as="geometry">
+            <mxPoint y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-10" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="iNef2An1ivGxDfvHR7-c-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="360" y="780" as="sourcePoint" />
+            <mxPoint x="340" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-13" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iNef2An1ivGxDfvHR7-c-3" target="iNef2An1ivGxDfvHR7-c-4">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="360" y="840" as="sourcePoint" />
+            <mxPoint x="640" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-14" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="570" y="810" as="sourcePoint" />
+            <mxPoint x="740" y="90" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="810" />
+              <mxPoint x="560" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iNef2An1ivGxDfvHR7-c-15" value="Déchiffrement du message d&#39;Alice avec la clef privée de Bob" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="729.9976949477207" y="19.997267770665303" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
 
 
 
