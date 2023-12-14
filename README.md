@@ -82,9 +82,29 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 
 `createUserAccount(configEmail, username, email, password, callback)`
+
 `checkRegisterForm(configRegex, username, email, password, passwordConfirm)`
-`checkActivation(hash, callback) `
+
+`checkActivation(hash, callback)`
+
 `activateUser(hash, callback)`
+
+`checkPassword(bcrypt, username, password, callback)`
+
+`isActive(username, callback)`
+
+`createUserSession(username, sessionIP)`
+
+`getUserID(username)`
+
+`getUserLoggedIPS(id)`
+
+`async logUserIP(ip, id)`
+
+`changeUsername(username, newName, callback)`
+
+`changeUserEmail(configEmail, username, email)`
+
 
 
 
