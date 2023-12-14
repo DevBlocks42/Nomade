@@ -9,3 +9,8 @@ Autrement dit, les messages ont au moins une couche de chiffrement lorsqu'ils tr
 **ATTENTION :** L'utilisation de cette application web nécéssite la mise en place d'un certificat **SSL/TLS** et le protocole **HTTPS** dans la mesure ou les clefs privées PGP des utilisateurs sont envoyées par le serveur.
 
 # Présentation 
+
+## Inscription
+
+![register_1](https://github.com/DevBlocks42/Nomade/assets/136115859/983f3b6c-6982-45ba-94e6-fa32ef9f06c2)
+
