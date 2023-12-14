@@ -76,7 +76,15 @@ Chaque discussions à laquelle participe un utilisateur est répertoriée sur l'
 
 ![Exemple](https://github.com/DevBlocks42/Nomade/assets/136115859/d8f82339-7164-43b2-aaa1-76133c730457)
 
+# Documentation technique des modules
 
+## user
+
+
+`createUserAccount(configEmail, username, email, password, callback)`
+`checkRegisterForm(configRegex, username, email, password, passwordConfirm)`
+`checkActivation(hash, callback) `
+`activateUser(hash, callback)`
 
 
 
